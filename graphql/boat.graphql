@@ -1,0 +1,9 @@
+type Boat {
+    id: ID!
+    name: String!
+    description: String
+    year: Int!
+    price: Float!
+    length: Float!
+    location: String!
+}

@@ -1,0 +1,12 @@
+type Boat {
+    id: ID!
+    name: String!
+    description: String
+    year: Int!
+    price: Float!
+    length: Float!
+    location: String!
+}
+type Query {
+  boats: [Boat]! @paginate(type: "paginator" model: "Boat")
+}
