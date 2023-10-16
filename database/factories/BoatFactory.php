@@ -23,6 +23,7 @@ class BoatFactory extends Factory
             "price" => fake()->randomNumber(7),
             "length" => fake()->randomNumber(2),
             "location" => fake()->city().', '.fake()->country(),
+            "sold" => random_int(0,1)
         ];
     }
 }

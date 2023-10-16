@@ -6,4 +6,5 @@ type Boat {
     price: Float!
     length: Float!
     location: String!
+    sold: Int!
 }
