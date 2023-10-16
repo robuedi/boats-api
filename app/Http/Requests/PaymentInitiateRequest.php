@@ -22,7 +22,8 @@ class PaymentInitiateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'product_id' => 'required|int'
+            'product_id' => 'required|int',
+            'email' => 'required|email'
         ];
     }
 }

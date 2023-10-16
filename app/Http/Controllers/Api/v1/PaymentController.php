@@ -7,6 +7,7 @@ use App\Http\Requests\PaymentInitiateRequest;
 use App\Services\Payment\IPayment;
 use App\Services\Payment\IPaymentProduct;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class PaymentController extends Controller
 {
@@ -15,7 +16,12 @@ class PaymentController extends Controller
     public function initiatePayment(PaymentInitiateRequest $request, IPaymentProduct $payment_product)
     {
         //return the intent details
-        return $this->payment_service->makeIntent($payment_product);
+        $intent =  $this->payment_service->makeIntent($payment_product);
+
+        //add the product payment to the DB
+        $payment_product->addPayment($intent['intent_id'], $request->email);
+
+        return response()->json($intent);
     }
 
     public function completePayment(Request $request)

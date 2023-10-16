@@ -33,9 +33,6 @@ class StripePayment implements IPayment
              throw $e;
         }
 
-        //add the product payment to the DB
-        $payment_product->addPayment($payment_intent->id);
-
         return [
             'token' => (string) Str::uuid(),
             'intent_id' =>  $payment_intent->id,

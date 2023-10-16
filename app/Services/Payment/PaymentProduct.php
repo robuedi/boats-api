@@ -25,10 +25,10 @@ class PaymentProduct implements IPaymentProduct
         return 'GBP';
     }
 
-    public function addPayment(string $intent_id): void
+    public function addPayment(string $intent_id, string $email): void
     {
         Payment::create([
-            'email' => 'test',
+            'email' => $email,
             'status' => 'pending',
             'boat_id' => $this->boat->id,
             'intent_id' => $intent_id,
