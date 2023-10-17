@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class PaymentFailRequest extends FormRequest
 {
-    
+
     /**
      * Determine if the user is authorized to make this request.
      */
@@ -23,7 +23,7 @@ class PaymentFailRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'intent_id' => 'required|int',
+            'intent_id' => 'required',
         ];
     }
 }
