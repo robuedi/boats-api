@@ -48,7 +48,7 @@ class PaymentProduct implements IPaymentProduct
         }
 
         //check if trully success
-        if(!in_array($status, ['requires_payment_method', 'success']))
+        if(!in_array($status, ['requires_payment_method', 'succeeded']))
         {
             return;
         }
