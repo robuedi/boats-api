@@ -37,5 +37,4 @@ class PaymentController extends Controller
         $this->payment_service->fail($request->intent_id);
         return response()->json([]);
     }
-
 }
