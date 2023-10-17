@@ -19,7 +19,7 @@ class PaymentController extends Controller
         $intent =  $this->payment_service->makeIntent($payment_product);
 
         //add the product payment to the DB
-        $payment_product->addPayment($intent['intent_id'], $request->email);
+        $payment_product->addPayment($intent['intent_id'] ?? null, $request->email);
 
         return response()->json($intent);
     }
